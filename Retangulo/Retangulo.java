@@ -4,26 +4,17 @@ public class Retangulo {
     private double comprimento = 1;
 
     public Retangulo(double comprimento, double largura) {
-        this.comprimento = comprimento;
-        this.largura = largura;
-    }
-
-    public double ValidarComprimento(double comprimento){
-        if(comprimento < 0 || comprimento == largura){
-            System.out.println("Erro: Um dos lados do retângulo é igual ou menor que zero.");
-        }
-        return comprimento;
-    }
-
-    public double ValidarLargura(double largura) {
-        if (largura < 0 || largura == comprimento) {
-            System.out.println("Erro: Um dos lados do retângulo é igual ou menor que zero.");
-        }
-        return largura;
+        setComprimento(comprimento);
+        setLargura(largura);
     }
 
     public void setComprimento(double comprimento) {
-        this.comprimento = ValidarComprimento(comprimento);
+        if(comprimento <= 0){
+            System.out.println("Erro: Um dos lados do retângulo é igual ou menor que zero.");
+            System.exit(0);
+        } else {
+            this.comprimento = comprimento;
+        }
     }
 
     public double getComprimento() {
@@ -31,7 +22,12 @@ public class Retangulo {
     }
 
     public void setLargura(double largura) {
-        this.largura = ValidarLargura(largura);
+        if(largura <= 0){
+            System.out.println("Erro: Um dos lados do retângulo é igual ou menor que zero.");
+            System.exit(0);
+        } else {
+            this.largura = largura;
+        }
     }
 
     public double getLargura() {
@@ -51,3 +47,4 @@ public class Retangulo {
         return ("Area: " + CalcularArea() + "\nPeriemtro: " + CalculadorPerimetro());
     }
 }
+
