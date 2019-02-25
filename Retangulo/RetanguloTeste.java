@@ -8,5 +8,5 @@ public class RetanguloTeste {
         Retangulo retangulo = new Retangulo(comprimento, largura);
 
         System.out.println(retangulo.toString());
-}
+    }
 }
